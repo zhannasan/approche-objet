@@ -16,9 +16,8 @@ public class Personne {
 		this.adresse = adresse;
 	}
 	
-	public void afficherNoms(String nom, String prenom){
+	public void afficherNoms(){
 		System.out.println(nom.toUpperCase()+" "+prenom);
-		
 	}
 	
 	public void setNewName(String nom){
