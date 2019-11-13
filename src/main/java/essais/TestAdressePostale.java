@@ -5,17 +5,9 @@ import entites.AdressePostale;
 public class TestAdressePostale {
 
 	public static void main(String[] args) {
-		AdressePostale adA = new AdressePostale();
-		adA.numeroRue = 84;
-		adA.nomRue = "Maurice Bejart";
-		adA.codePostal = 34080;
-		adA.ville = "Montpellier";
-
-		AdressePostale adB = new AdressePostale();
-		adB.numeroRue = 16;
-		adB.nomRue = "St. Guillhem";
-		adB.codePostal = 34000;
-		adB.ville = "Montpellier";
+		AdressePostale adA = new AdressePostale(84, "Maurice Bejart",34080, "Montpellier");
+		AdressePostale adB = new AdressePostale(16,"St. Guillhem", 34000, "Montpellier");
+				
 	}
 	
 
