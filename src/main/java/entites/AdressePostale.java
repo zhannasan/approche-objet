@@ -1,10 +1,9 @@
 package entites;
 
 public class AdressePostale {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	public int numeroRue;
+	public String nomRue;
+	public int codePostal;
+	public String ville;
+	
 }
