@@ -44,6 +44,5 @@ public class Personne {
 	public AdressePostale getAddress(){
 		return adresse;
 	}
-	
-	
+
 }

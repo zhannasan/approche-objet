@@ -17,15 +17,15 @@ public class TestPersonne {
 		
 		persB.setNewSurame("Perceval");
 		
-		adB.setNewAdresse(16,"St. Guillhem", 34000, "Montpellier");
+		persB.setNewAdresse(new AdressePostale(18,"St. Guilhem", 34000, "Montpellier"));
 		
 		String name = persB.getName();
 		
 		String surname = persB.getSurame();
 		
-		AdressePostale address = adB.getAdresse();
+		AdressePostale address = persB.getAddress();
 		
-		System.out.println(name+" : "+surname+" "+ adB.afficherAddress());
+		System.out.println(name+" "+surname+" "+ address.afficherAddress());
 		
 	}
 
