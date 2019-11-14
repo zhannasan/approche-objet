@@ -22,6 +22,9 @@ public class Compte {
 		this.soldeCompte = soldeCompte;
 	}
 	
+	public String toString(){
+		return "Compte N "+ numeroCompte+"\rSolde "+soldeCompte;
+	}
 	
 		
 }
