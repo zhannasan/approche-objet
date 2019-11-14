@@ -10,7 +10,7 @@ public class CompteTaux extends Compte {
 	}
 	
 	public String toString(){
-		return "---\r"+super.toString()+"Taux de renumeration "+tauxRenum+"\r---";
+		return "---\r"+super.toString()+"\rTaux de renumeration "+tauxRenum+"\r---";
 	}
 
 	public double getTauxRenum() {
