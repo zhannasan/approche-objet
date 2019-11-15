@@ -3,17 +3,19 @@ package fr.diginamic.banque.entites;
 public class Compte {
 	private int numeroCompte;
 	private double soldeInitial;
-	private double soldeCompte;
-	private Operation[] tabOp;
+	//private double soldeCompte;
+	private Operation tabOp;
 	private Operation ope;
 	double solde;
 	
-	void ajouterOperation(Operation ope){
-		this.ope=ope;
+	void ajouterOperation(Operation ope, Operation[] tabOp){
+		this.tabOp=ope;
 	}
-	public Compte(int numeroCompte, double soldeCompte) {
+	
+	public Compte(int numeroCompte, double soldeInitial, Operation ope) {
 		this.numeroCompte = numeroCompte;
-		this.soldeCompte = soldeCompte;
+		this.soldeInitial = soldeInitial;
+		this.ope=ope;
 	}
 
 	
@@ -24,17 +26,10 @@ public class Compte {
 		this.numeroCompte = numeroCompte;
 	}
 
-/*	public double getSolde(String type) {
-		if (type=="CREDIT"){
-			solde = soldeInitial+ope;
-		}
-		else if(type=="DEBIT"){
-			solde = soldeInitial-ope;
-	}
-		return solde;
-	}
-		
 	public String toString(){
+		return "Compte N "+ numeroCompte+"\rSolde initial "+soldeInitial+" nombre d'operations "+ope;
+	}
+	/*public String toString(){
 		return "Compte N "+ numeroCompte+"\rSolde "+soldeCompte;
 	}*/
 	

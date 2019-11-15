@@ -17,4 +17,8 @@ public class Cercle implements ObjetGeometrique{
 		return Math.PI*rayon*rayon;
 	}
 	
+	public String toString(){
+		return "Cercle : \rPerimetre "+perimetre()+" surface "+surface();
+	}
+	
 }

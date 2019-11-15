@@ -4,8 +4,8 @@ public class CompteTaux extends Compte {
 
 	double tauxRenum;
 
-	public CompteTaux(int numeroCompte, double soldeCompte, double tauxRenum ) {
-		super(numeroCompte, soldeCompte);
+	public CompteTaux(int numeroCompte, double soldeCompte, Operation ope, double tauxRenum ) {
+		super(numeroCompte, soldeCompte, ope);
 		this.tauxRenum = tauxRenum;
 	}
 	

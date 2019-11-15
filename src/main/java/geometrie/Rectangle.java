@@ -15,4 +15,8 @@ public class Rectangle implements ObjetGeometrique{
 		this.largeur = largeur;
 		this.longueur = longueur;
 	}
+	
+	public String toString(){
+		return "Rectangle : \rPerimetre "+perimetre()+" surface "+surface();
+	}
 }
