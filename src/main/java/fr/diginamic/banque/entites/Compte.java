@@ -4,12 +4,12 @@ public class Compte {
 	private int numeroCompte;
 	private double soldeInitial;
 	//private double soldeCompte;
-	private Operation tabOp;
+	private Operation[] tabOp;
 	private Operation ope;
 	double solde;
 	
-	void ajouterOperation(Operation ope, Operation[] tabOp){
-		this.tabOp=ope;
+	void ajouterOperation(Operation[] tabOp){
+		Operation[] ntabOp = new Operation [tabOp.length+1];
 	}
 	
 	public Compte(int numeroCompte, double soldeInitial, Operation ope) {
