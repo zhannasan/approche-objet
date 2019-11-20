@@ -17,12 +17,29 @@ public class Compte {
 		this.soldeCompte = soldeCompte;
 	}
 	
+	public double getSoldeCompte() {
+		return soldeCompte;
+	}
+
+	public void setSoldeCompte(double soldeCompte) {
+		this.soldeCompte = soldeCompte;
+	}
+
 	public Compte(int numeroCompte, double soldeInitial, Operation ope) {
 		this.numeroCompte = numeroCompte;
 		this.soldeInitial = soldeInitial;
 		this.ope=ope;
 	}
 
+	public boolean equals(Object obj){
+		if(! (obj instanceof Compte)){
+			return false;
+		}
+		
+		Compte compteN=(Compte)obj;
+		return (this.numeroCompte==compteN.getNumeroCompte()&& this.soldeCompte==compteN.getSoldeCompte());
+		
+	}
 	
 	public int getNumeroCompte() {
 		return numeroCompte;
