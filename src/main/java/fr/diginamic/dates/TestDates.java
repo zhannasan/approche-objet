@@ -9,13 +9,15 @@ public class TestDates {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
 		Date date = new Date(); 
 		System.out.println(formatter.format(date)); 
-
-		SimpleDateFormat formatter2 = new SimpleDateFormat("HH:mm:ss"); 
+		
+		SimpleDateFormat formatter2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
 		Date time = new Date();
-		Date fulldate = new Date();
-		long seconds = java.util.concurrent.TimeUnit.MINUTES.toSeconds(600);
-		time.setTime(seconds);
+		time.setTime(1574289059000L);
 		System.out.println(formatter2.format(time));
+		
+		Date timeNow = new Date(System.currentTimeMillis());
+		System.out.println(formatter2.format(timeNow));
+	
 	}
 
 }
