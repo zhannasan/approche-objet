@@ -50,7 +50,8 @@ public class Pays {
 		setPays.add(new Pays ("Russie",145872256,  10846));
 		setPays.add(new Pays ("Inde", 1366417754, 1980));
 		
-		System.out.println((setPays. );
+
+	
 		
 		
 		
