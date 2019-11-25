@@ -2,7 +2,9 @@ package listes;
 
 import java.util.*;
 
-public class Ville {
+import tri.Comparable;
+
+public class Ville implements Comparable<Ville>{
 	private String nom;
 	private int nbHabit;
 	
@@ -87,6 +89,14 @@ public class Ville {
 			System.out.println(villes.get(i).nom);
 		}
 				
+	}
+	@Override
+	public int compareTo(Ville v) {
+		return nom.compareTo(v.getNom());
+	}
+	
+	public String toString(){
+		return this.nom+" "+this.nbHabit;
 	}
 
 }
