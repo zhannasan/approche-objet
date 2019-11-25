@@ -37,6 +37,9 @@ public class Pays {
 	public void setPib(int pib) {
 		this.pib = pib;
 	}
+	public String toString(){
+		return nom+" "+nHabit+" "+pib;
+	}
 
 	public static void main(String[] args) {
 		Set <Pays> setPays = new HashSet<Pays>();
@@ -62,7 +65,7 @@ public class Pays {
 		long maxT = 0;
 		long minT=0;
 		String maxPays = null;
-		String minPays=null;
+		String minPays = null;
 		for (Pays a: setPays){
 			int pib = a.getPib();
 			long nHab = a.getnHabit();
@@ -73,9 +76,30 @@ public class Pays {
 				minT = nHab*pib;
 				minPays = a.getNom();
 			}
+			
 		}
+
 		System.out.println("Le PIB total le plus important est "+maxT+" "+maxPays);
 		
 		System.out.println("Le PIB total le plus important est "+minT+" "+minPays);
+		
+		for (Pays p: setPays){
+			if(p.getNom().equals(minPays)){
+	        	p.setNom(minPays.toUpperCase());
+			}
+			System.out.println(p.toString());
+		}
+
+		Iterator it = setPays.iterator();
+		while(it.hasNext()){
+	        Pays p = (Pays)it.next();
+	        if(p.getNom().equals(minPays.toUpperCase())){
+	        	it.remove();
+	        }
+		}
+		System.out.println("\r");
+		for (Pays a: setPays){
+			System.out.println(a.toString());
+		}
 	}
 }
