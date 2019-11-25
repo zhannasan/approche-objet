@@ -12,7 +12,8 @@ public class TestCercle {
 		System.out.println(c1);
 		System.out.println(c2);
 		
-		System.out.println(CercleFactory.makeCercle(4)); 
+		Cercle c3 = CercleFactory.makeCercle(4);
+		System.out.println(c3); 
 	}
 
 }

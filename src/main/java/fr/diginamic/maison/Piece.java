@@ -1,18 +1,21 @@
 package fr.diginamic.maison;
 
 public abstract class Piece {
-	double superficie;
-	int numEtage;
+	private double superficie;
+	private int numEtage;
 	
 	public Piece(double superficie, int numEtage) {
 		this.superficie = superficie;
 		this.numEtage = numEtage;
 	}
 
+	public abstract String getPieceType();
+
 	public double getSuperficiePiece() {
 		return superficie;
 	}
 	
-	abstract String getPieceType();
-	
+	public int getNumEtage() {
+		return numEtage;
+	}
 }

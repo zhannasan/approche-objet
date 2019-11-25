@@ -1,16 +1,18 @@
 package maps;
 
 import java.util.Collection;
+import sets.Pays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class MapPays {
 
 	public static void main(String[] args) {
-		HashMap<String, Integer> mapPays = new HashMap< String, Integer>();
-		mapPays.put("USA", 30);
-		mapPays.put("France", 7);
-		mapPays.put("Inde", 140);
+		HashMap<Pays> mapPays = new HashMap<Pays>();
+		
+
 		
 		Set <String> keySet = mapPays.keySet();
 		//Set <Integer> valSet = (Set<Integer>) mapPays.values();

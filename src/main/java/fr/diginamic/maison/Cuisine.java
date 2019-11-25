@@ -8,7 +8,7 @@ public class Cuisine extends Piece{
 	}
 
 	@Override
-	String getPieceType() {
+	public String getPieceType() {
 		return "Cuisine";
 	}
 

@@ -21,8 +21,6 @@ public class TetsListeString {
 			if(villes.get(i).length() >= max){
 				maxInd =  i;
 				max = villes.get(i).length();
-			}else{
-				maxInd = maxInd;
 			}
 		}
 		System.out.println(villes.get(maxInd)+" "+max+" letters");

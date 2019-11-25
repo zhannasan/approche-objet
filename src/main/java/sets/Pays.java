@@ -4,15 +4,15 @@ import java.util.*;
 
 public class Pays {
 	private String nom;
-	private int nHabit;
-	private double pib;
+	private long nHabit;
+	private int pib;
 
-	public Pays(String nom, int nHabit, double pib){
+	public Pays(String nom, long nHabit, int pib){
 		 this.nom=nom;
 		 this.nHabit=nHabit;
 		 this.pib=pib;
 	};
-	public void add(String nom, int nHabit, double pib){};
+	public void add(String nom, long nHabit, int pib){};
 	
 	public String getNom() {
 		return nom;
@@ -22,40 +22,60 @@ public class Pays {
 		this.nom = nom;
 	}
 
-	public int getnHabit() {
+	public long getnHabit() {
 		return nHabit;
 	}
 
-	public void setnHabit(int nHabit) {
+	public void setnHabit(long nHabit) {
 		this.nHabit = nHabit;
 	}
 
-	public double getPib() {
+	public int getPib() {
 		return pib;
 	}
 
-	public void setPib(double pib) {
+	public void setPib(int pib) {
 		this.pib = pib;
 	}
 
 	public static void main(String[] args) {
 		Set <Pays> setPays = new HashSet<Pays>();
-		setPays.add(new Pays ("USA", 329064917, 59939));
-		setPays.add(new Pays ("France", 65129728, 39827));
-		setPays.add(new Pays ("Allemagne", 83517045,44680));
-		setPays.add(new Pays ("UK", 67530172, 39532));
-		setPays.add(new Pays ("Italie",60550075, 32038));
-		setPays.add(new Pays ("Japon", 126860301, 38214));
-		setPays.add(new Pays ("Chine", 1433783686,  8612));
-		setPays.add(new Pays ("Russie",145872256,  10846));
-		setPays.add(new Pays ("Inde", 1366417754, 1980));
+		setPays.add(new Pays ("USA",325084756,59939)); //2017 WorldBank
+		setPays.add(new Pays ("France",64842509,39827));
+		setPays.add(new Pays ("Allemagne",82658409,44680));
+		setPays.add(new Pays ("UK",66727461,39532));
+		setPays.add(new Pays ("Italie",60673701,32038));
+		setPays.add(new Pays ("Japon",127502725,38214));
+		setPays.add(new Pays ("Chine",1421021791,8612));
+		setPays.add(new Pays ("Russie",145530082,10846));
+		setPays.add(new Pays ("Inde",1338676785,1980));
 		
-
-	
+		int max = 0;
+		for (Pays a: setPays){
+			int pib = a.getPib();
+			if (pib > max){
+				max=pib;
+			}
+		}
+		System.out.println("Le PIB per capita le plus important est "+max);
 		
+		long maxT = 0;
+		long minT=0;
+		String maxPays = null;
+		String minPays=null;
+		for (Pays a: setPays){
+			int pib = a.getPib();
+			long nHab = a.getnHabit();
+			if (nHab*pib > maxT){
+				maxT = nHab*pib;
+				maxPays = a.getNom();
+			}else{
+				minT = nHab*pib;
+				minPays = a.getNom();
+			}
+		}
+		System.out.println("Le PIB total le plus important est "+maxT+" "+maxPays);
 		
-		
-		
+		System.out.println("Le PIB total le plus important est "+minT+" "+minPays);
 	}
-
 }

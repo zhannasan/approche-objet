@@ -7,7 +7,7 @@ public class WC extends Piece{
 	}
 
 	@Override
-	String getPieceType() {
+	public String getPieceType() {
 		return "WC";
 	}
 

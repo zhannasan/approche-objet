@@ -25,7 +25,35 @@ public class Ville {
 	public void setNbHabit(int nbHabit) {
 		this.nbHabit = nbHabit;
 	}
-
+	
+	static class Pair{
+		int max;
+		int min;
+	}
+	
+	static Pair getMinMax(List<Ville> list) { 
+		Pair minmaxInd = new Pair();
+		int max = 0;
+		int min=0;
+		if(list.get(0).nbHabit<=list.get(1).nbHabit){
+			min = list.get(0).nbHabit;
+			max =  list.get(1).nbHabit;
+		}else{
+			min = list.get(1).nbHabit;
+			max =  list.get(0).nbHabit;
+		}
+		
+		for(int i=0; i<list.size(); i++){
+			if(list.get(i).nbHabit>=max){
+				max=list.get(i).nbHabit;
+				minmaxInd.max = i;
+			}else if(list.get(i).nbHabit<= min){
+				min=list.get(i).nbHabit;
+				minmaxInd.min = i;
+				}
+		}
+		return minmaxInd;
+	}
 	
 	public static void main(String[] args) {
 		List<Ville> villes = new ArrayList<>();
@@ -38,31 +66,12 @@ public class Ville {
 		villes.add(new Ville("Marseille", 850700));
 		villes.add(new Ville("Tarbes", 40600));
 		
-		int max = 0;
-		int maxInd = 0;
-		int minInd = 0;
-		int min=0;
-		if(villes.get(0).nbHabit<=villes.get(1).nbHabit){
-			min = villes.get(0).nbHabit;
-			max =  villes.get(1).nbHabit;
-		}else{
-			min = villes.get(1).nbHabit;
-			max =  villes.get(0).nbHabit;
-		}
+		Pair minmaxInd = getMinMax(villes);
+				
+		System.out.println("Max "+villes.get(minmaxInd.max).nom+" "+villes.get(minmaxInd.max).nbHabit);
+		System.out.println("Min "+villes.get(minmaxInd.min).nom+" "+villes.get(minmaxInd.min).nbHabit);
 		
-		for(int i=0; i<villes.size(); i++){
-			if(villes.get(i).nbHabit>=max){
-				max=villes.get(i).nbHabit;
-				maxInd = i;
-			}else if(villes.get(i).nbHabit<= min){
-				min=villes.get(i).nbHabit;
-				minInd = i;
-				}
-		}
-		System.out.println(villes.get(maxInd).nom+" "+villes.get(maxInd).nbHabit);
-		System.out.println(villes.get(minInd).nom+" "+villes.get(minInd).nbHabit);
-		
-		villes.remove(minInd);
+		villes.remove(minmaxInd.min);
 		
 		for(int i=0; i<villes.size(); i++){
 			System.out.println(villes.get(i).nom);

@@ -8,7 +8,7 @@ public class ManipulationChaine {
 	public static void main(String[] args) {
 		String chaine = "Durand;Marcel;012543;1 523.5";
 		char premierCaractere = chaine.charAt(0);
-		System.out.println("Premier caractère: " + premierCaractere);
+		System.out.println("Premier caractÃ¨re: " + premierCaractere);
 		System.out.println("Length: " + chaine.length());
 		System.out.println("IndexOf: " + chaine.indexOf(";"));
 		System.out.println("Substring: " + chaine.substring(7,14));

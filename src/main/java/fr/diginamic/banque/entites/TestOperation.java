@@ -15,11 +15,11 @@ public class TestOperation {
 		for (int i=0; i<tabOp.length; i++){
 			
 			if(tabOp[i].getType().equals("DEBIT")){
-				solde -= tabOp[i].getMontantOp();
+				solde += tabOp[i].getMontantOp();
 				System.out.println(tabOp[i]);
 				
 			}else if(tabOp[i].getType().equals("CREDIT")){
-				solde += tabOp[i].getMontantOp();
+				solde -= tabOp[i].getMontantOp();
 				System.out.println(tabOp[i]);
 			}
 		}

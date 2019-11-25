@@ -4,13 +4,13 @@ public class CompteTaux extends Compte {
 
 	double tauxRenum;
 
-	public CompteTaux(int numeroCompte, double soldeCompte, Operation ope, double tauxRenum ) {
-		super(numeroCompte, soldeCompte, ope);
+	public CompteTaux(int numeroCompte, double soldeCompte, double tauxRenum ) {
+		super(numeroCompte, soldeCompte);
 		this.tauxRenum = tauxRenum;
 	}
 	
 	public String toString(){
-		return "---\r"+super.toString()+"\rTaux de renumeration "+tauxRenum+"\r---";
+		return super.toString()+" Taux de renumeration "+tauxRenum+"%";
 	}
 
 	public double getTauxRenum() {
