@@ -2,7 +2,7 @@ package listes;
 
 import java.util.*;
 
-import tri.Comparable;
+//import tri.Comparable;
 
 public class Ville implements Comparable<Ville>{
 	private String nom;

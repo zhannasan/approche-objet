@@ -2,7 +2,9 @@ package sets;
 
 import java.util.*;
 
-public class Pays {
+import tri.Comparable;
+
+public class Pays implements java.lang.Comparable<Pays>, Comparable<Pays>{
 	private String nom;
 	private long nHabit;
 	private int pib;
@@ -40,6 +42,7 @@ public class Pays {
 	public String toString(){
 		return nom+" "+nHabit+" "+pib;
 	}
+	
 
 	public static void main(String[] args) {
 		Set <Pays> setPays = new HashSet<Pays>();
@@ -101,5 +104,13 @@ public class Pays {
 		for (Pays a: setPays){
 			System.out.println(a.toString());
 		}
+		
 	}
+	@Override
+	public int compareTo(Pays p) {
+		return this.nom.compareTo(p.getNom());
+	}
+	
+	
+
 }
