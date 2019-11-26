@@ -1,5 +1,6 @@
 package fr.diginamic.banque;
 
+import java.util.List;
 import java.util.Scanner;
 import fr.diginamic.banque.entites.*;
 
@@ -20,10 +21,10 @@ public class ApplicationDao {
 				
 				case 1:
 					System.out.println("Liste des comptes");
-					Compte[] comptes = dao.lister();
-					if(comptes.length>=1){
-						for(int i=0; i<comptes.length;i++){
-							System.out.println(comptes[i].toString());
+					List<Compte> comptes = dao.lister();
+					if(comptes.size()>=1){
+						for(Compte c : comptes){
+							System.out.println(c.toString());
 						}
 					}
 					break;
@@ -54,8 +55,8 @@ public class ApplicationDao {
 				case 3:
 					System.out.println("Ajout d’une opération à un compte");
 					comptes = dao.lister();
-					for(int i=0; i<comptes.length; i++){
-						System.out.println(comptes[i]);
+					for(Compte c : comptes){
+						System.out.println(c);
 					}
 					System.out.println("Veuillez choisir le numéro de compte concerné :");
 					int numero = Integer.valueOf(sc.nextLine());
@@ -89,8 +90,8 @@ public class ApplicationDao {
 				case 4:
 					System.out.println("Suppression d’un compte");
 					comptes = dao.lister();
-					for(int i=0; i<comptes.length; i++){
-						System.out.println(comptes[i]);
+					for(Compte c : comptes){
+						System.out.println(c);
 					}
 					System.out.println("Veuillez saisir le numéro de compte à supprimer :");
 					numero = Integer.valueOf(sc.nextLine());

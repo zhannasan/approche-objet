@@ -1,51 +1,49 @@
 package fr.diginamic.banque.entites;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CompteDaoMem implements CompteDao{
-	private Compte[] comptes = new Compte[0];
+	private List<Compte> comptes = new ArrayList<Compte>();
 
 	@Override
-	public Compte[] lister() {
+	public List<Compte> lister() {
 		return comptes;
 	}
 
 	@Override
 	public void sauvegarder(Compte nvCompte) {
-		Compte[] ncomptes = new Compte[comptes.length+1];
-		for (int i=0; i<comptes.length; i++){
-			ncomptes[i]= comptes[i];
-		}
-		ncomptes[comptes.length]=nvCompte;
+		List<Compte> ncomptes = new ArrayList<Compte>(comptes.size()+1);
+		ncomptes.addAll(comptes);
+		ncomptes.add(nvCompte);
 		comptes = ncomptes;
 	}
 
 	@Override
 	public boolean supprimer(int numero) {
-		Compte[] ncomptes = new Compte[comptes.length-1];
-		int j=-10;
-		if (comptes.length>0){
-			for (int i=0; i<comptes.length; i++){	
-				if (comptes[i].getNumeroCompte()==Integer.valueOf(numero)){
+		List<Compte> ncomptes = new ArrayList<Compte>(comptes.size()-1);
+		int j=-1;
+		if (comptes.size()>0){
+			for (int i=0; i<comptes.size(); i++){	
+				if (comptes.get(i).getNumeroCompte()==Integer.valueOf(numero)){
 					j=i;
+					comptes.remove(j);
 				}
 			}
-			if (j>=0){
-				for (int i=0; i<j; i++){	
-					ncomptes[i]= comptes[i];
-				}
-				for (int i=j; i<comptes.length-1; i++){	
-					ncomptes[i]= comptes[i+1];
-				}
-				comptes = ncomptes;
-				return true;
+	
+			if (j>=0){	
+				ncomptes.addAll(comptes);
 			}
+			comptes = ncomptes;
+			return true;
 		}
 		return false;
 	}
 
 	@Override
 	public boolean existe(int numero) {
-		for(int i=0; i<comptes.length;i++ ){
-			if(comptes[i].getNumeroCompte()==numero){
+		for(Compte c : comptes){
+			if(c.getNumeroCompte()==numero){
 				return true;
 			}
 		}
@@ -54,9 +52,9 @@ public class CompteDaoMem implements CompteDao{
 
 	@Override
 	public Compte getCompte(int numero) {
-		for(int i=0; i<comptes.length;i++ ){
-			if(comptes[i].getNumeroCompte()==numero){
-				return comptes[i];
+		for(Compte c : comptes){
+			if(c.getNumeroCompte()==numero){
+				return c;
 			}
 		}
 		return null;

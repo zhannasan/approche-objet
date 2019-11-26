@@ -44,8 +44,6 @@ public class TestBanque {
 		System.out.println("Debit "+compte.getSolde("DEBIT")+"\u20ac");
 		System.out.println("Credit "+compte.getSolde("CREDIT")+"\u20ac");
 		System.out.println(compte.toString());
-
-		
 		
 	}
 
