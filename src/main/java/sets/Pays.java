@@ -106,11 +106,20 @@ public class Pays implements java.lang.Comparable<Pays>, Comparable<Pays>{
 		}
 		
 	}
-	@Override
+	/*	@Override
 	public int compareTo(Pays p) {
 		return this.nom.compareTo(p.getNom());
-	}
+	}*/
 	
+	@Override
+	public int compareTo(Pays p) {
+		if (this.pib>p.getPib()){
+			return -1;
+		}else if (this.pib<p.getPib()){
+			return 1;
+		}
+		return 0;
+	}
 	
 
 }

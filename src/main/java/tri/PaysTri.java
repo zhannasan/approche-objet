@@ -23,6 +23,18 @@ public class PaysTri  {
 		for(Pays p: listPays){
 	    	 System.out.println(p.toString());
 	     }
+		System.out.println("\r");
+		
+		Collections.sort(listPays, new ComparatorHabitant());
+		for(Pays p: listPays){
+	    	 System.out.println(p.toString());
+	     }
+		System.out.println("\r");
+		
+		Collections.sort(listPays, new ComparatorPibHabitant());
+		for(Pays p: listPays){
+	    	 System.out.println(p.toString());
+	     }
 		
 	}
 
