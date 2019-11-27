@@ -8,7 +8,12 @@ public class ComparatorPibHabitant implements Comparator<Pays>{
 
 	@Override
 	public int compare(Pays p, Pays q) {
-		return q.getPib()-p.getPib();
+		if (q.getPib()>p.getPib()){
+			return 1;
+		}else if(q.getPib()<p.getPib()){
+			return -1;
+		}
+		return 0;
 	}
 
 }

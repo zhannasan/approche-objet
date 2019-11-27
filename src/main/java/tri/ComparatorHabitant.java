@@ -8,7 +8,12 @@ public class ComparatorHabitant implements Comparator<Pays>{
 
 	@Override
 	public int compare(Pays p, Pays q) {
-		return (int) (q.getnHabit()-p.getnHabit());
+		if(q.getnHabit()>p.getnHabit()){
+			return 1;
+		}else if (q.getnHabit()<p.getnHabit()){
+			return -1;
+		}
+		return 0;
 	}
 
 }
