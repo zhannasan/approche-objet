@@ -1,5 +1,9 @@
 package fr.diginamic.maison;
 
+/**
+ * @author janka
+ *
+ */
 public class Maison {
 	private Piece[] tab = new Piece[0];
 
@@ -7,21 +11,34 @@ public class Maison {
 		super();
 	}
 
+	/**
+	 * @param p parameter of Class Piece (area, floor number), 
+	 * where the floor number is allowed to be negative for basement
+	 */
 	public void ajouterPiece(Piece p){
-		Piece[] newtab = new Piece[tab.length+1];
-		for (int i=0; i<tab.length; i++){
-			newtab[i]= tab[i];
-		}
-		newtab[newtab.length-1] = p;
-		tab=newtab;
+		try{
+			if (p.getSuperficiePiece()>=0){
+				Piece[] newtab = new Piece[tab.length+1];
+				for (int i=0; i<tab.length; i++){
+					newtab[i]= tab[i];
+				}
+				newtab[newtab.length-1] = p;
+				tab=newtab;
+			}
+			}catch(NullPointerException npe){
+				System.out.println("Cannot pass null argument to Piece");}
+			
 	};	
 	
 	public double getSuperficieTotale(){
 		double supMaison = 0;
+		try{
 		for (int i=0;i<tab.length;i++){
 			supMaison += tab[i].getSuperficiePiece();
 		}
-		return supMaison;
+		return supMaison;}catch(NullPointerException npe){
+			System.out.println("Cannot pass null argument to Piece "+npe.getMessage());}
+		return 0;
 	};
 
 	public double getSuperficieParEtage(int etage){

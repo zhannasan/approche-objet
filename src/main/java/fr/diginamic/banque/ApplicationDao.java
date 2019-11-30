@@ -14,7 +14,6 @@ public class ApplicationDao {
 		do{
 			afficherMenu();
 			
-			if(sc.hasNextInt()){
 				String inputS = sc.nextLine();
 				input = Integer.valueOf(inputS);
 				switch(input){
@@ -110,11 +109,10 @@ public class ApplicationDao {
 				case 99:
 					System.out.println("Aurevoir! \u2639");
 					break;
+				default:
+					System.out.println("Saisie inconnue. Veuillez recommencer.");
+					break;
 				}
-			}else{
-				System.out.println("Veuillez recommencer");
-				break;
-			}
 		}
 			while(input!=99);
 
