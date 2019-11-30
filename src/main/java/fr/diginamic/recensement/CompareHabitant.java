@@ -13,5 +13,4 @@ public class CompareHabitant implements Comparator<Ville>{
 		}
 		return 0;
 	}
-
 }
